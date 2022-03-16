@@ -1,6 +1,6 @@
 ---
 layout: layouts/contact.njk
-title: Get in touch
+title: Contact | Johan Edlund
 metaDescription: Contact form
 section: contact
 date: 2022-03-16
