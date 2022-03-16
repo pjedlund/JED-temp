@@ -1,0 +1,782 @@
+/*!
+Theme Name:         ed
+Description:        Old-school statisk html med http://scalecss.com 
+Version:            20190403
+Author:             Johan Edlund
+Author URI:         http://edlunddesign.com
+*/
+
+@import "elements.less";
+//.gradient(#F5F5F5, #EEE, #FFF); 
+
+// Variables
+@basecol : #f1b13a;               // Base colour - orange kfsk logo
+@compcol : spin(@basecol, 180);  	// Complementary colour
+
+@logogrey: #8c9193;
+@logored: #ce2630;
+@logoredcomp: spin(@logored, 180);
+@backgroundTileColor: #f8faf9;
+
+@backgroundColor: @white;
+
+@pink: #F67280;
+@blue: #355C7D;
+@green: #908B07;
+
+// Links
+
+@linkcol : @logored;
+@linkcolhover : darken(@linkcol, 20);
+@linkcolvisited : @linkcolhover;
+@linkcolfocus : @linkcolhover;
+
+// greyscale
+
+@black : rgb(0,0,0);
+@darkgrey : lighten(@black, 25%);
+@grey : lighten(@black, 50%);
+@lightgrey : lighten(@black, 75%);
+@lightergrey : lighten(@black, 90%);
+@white : rgb(255,255,255);
+
+/*
+  VARIOUS
+--------------------------------------------- */
+.ir { display: block; border: 0; text-indent: -999em; overflow: hidden; background-color: transparent; background-repeat: no-repeat; text-align: left; direction: ltr; *line-height: 0; }
+.ir br { display: none; }
+.hidden { display: none !important; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active, .visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
+.clear {clear:both;}
+.uppercase {text-transform: uppercase;}
+acronym, abbr {font-style:normal;text-decoration:none;cursor: help;}
+acronym[title], abbr[title] {/* border-bottom:1px dotted #999; */}
+span.amp {font:normal 1em Baskerville, Palatino, Constantia, "Book Antiqua", "URW Palladio L", serif;font-style: italic;margin:0 .2em;} /* 20px */
+
+
+/*
+   ######   ######     ###    ##       ########
+  ##    ## ##    ##   ## ##   ##       ##
+  ##       ##        ##   ##  ##       ##
+   ######  ##       ##     ## ##       ######
+        ## ##       ######### ##       ##
+  ##    ## ##    ## ##     ## ##       ##
+   ######   ######  ##     ## ######## ########
+
+  http://viljamis.com/blog/2012/typography/
+--------------------------------------------- */
+
+/* http://www.colourlovers.com/palette/1811244/1001_Stories */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size:100%;
+  font: inherit;
+  vertical-align: baseline;
+  }
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+  }
+
+strong, b {
+  font-weight: bold;
+  }
+  
+small {
+  font-size: .9125em;
+  color: #666;
+  } 
+
+i, em, blockquote {
+  font-style: italic;
+  }
+
+html, body {
+  min-height: 100%;
+  }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background: rgb(255,255,255);
+  overflow-y: scroll;
+  }
+
+img {
+  -ms-interpolation-mode: bicubic;
+  background: transparent;
+  border: 0;
+  }
+
+img, embed, object, video { 
+  max-width: 100%;
+  height: inherit;
+  _width: 100%;
+  }
+
+
+/*
+  PILLBOX LANG
+--------------------------------------------- */
+
+.block {
+  text-align: center;
+}
+ 
+.block:before {
+  //content: '\200B';
+/*   content: '';
+  margin-left: -0.25em; */
+  display: inline-block;
+  height: 100%; 
+  vertical-align: middle;
+ }
+ 
+ 
+ul.lang {
+	font-family: "brandon-grotesque", sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	list-style-type: none;	
+	padding: 0 .5em;
+	border: 1px solid @pink;
+	.rounded(1em);
+	display: inline-block;
+	vertical-align: middle;
+	width: auto;
+	background: #e7e7e7;
+  }
+  
+ul.lang li {
+	display: inline;
+	//margin: 0 auto;
+    color: @pink;
+    //border-right: 2px solid red;
+    margin: 0;
+    padding: 0;
+    padding: 1em 1.5em;
+    font-weight: normal;
+	font-size: .75em;
+}
+
+ul.lang li a {
+	font-weight: normal;
+}
+ul.lang li.sv {
+	padding-right: 1.6125em;
+	border-right: 1px solid lighten(@pink, 10%);
+}
+
+
+/*
+  SELECTIONS
+--------------------------------------------- */
+
+::-moz-selection {
+  background: darken(@pink, 10%);
+  color: rgb(255,255,255);
+  text-shadow: none;
+  }
+
+::selection {
+  background: darken(@pink, 10%);
+  color: rgb(255,255,255);
+  text-shadow: none;
+  }
+
+::selection:window-inactive {
+  background: rgb(220,220,220);
+  color: rgb(50,50,50);
+  }
+
+img::selection {
+  background: transparent;
+  }
+
+img::-moz-selection {
+  background: transparent;
+  }
+
+/*
+  BASE TYPOGRAPHY
+--------------------------------------------- */
+
+html {background: #f1f1f1;}
+body {
+  font: 75%/1.5em "adobe-caslon-pro", georgia, serif;
+  max-width: 40.49984em;
+  color: rgb(0,0,0);
+  margin: 0 auto;
+  padding: 1em;
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  -moz-font-feature-settings: "liga=1, kern=1";
+  -ms-font-feature-settings: "liga" 1, "kern" 1;
+//   text-rendering: optimizeLegibility;
+  margin-bottom: 1.42382em;
+  font-weight: normal;
+  }
+
+p, ul, ol, dl, blockquote, .content img {
+  margin-bottom: 1.5em;
+/*
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  hyphens: auto;
+*/
+  }
+ 
+
+
+abbr {
+  text-transform: lowercase;
+  font-variant: small-caps;
+  font-size: 1.1em;
+  font-weight: bold;
+  letter-spacing: .1em;
+  cursor: help;
+  }
+
+sub, sup {
+  vertical-align: baseline;
+  position: relative;
+  font-size: 65%;
+  line-height: 0;
+  }
+
+sub {
+  bottom: -0.25em;
+  }
+
+sup {
+  top: -0.5em;
+  }
+
+blockquote {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin: 1.5em 0 .1em 1.80203em;
+  color: rgb(90,90,90);
+  position: relative;
+  }
+
+blockquote:before {
+  -webkit-font-smoothing: antialiased;
+  color: #F8B195;
+  font-size: 3.60406em;
+  position: absolute;
+  font-style: italic;
+  content: "\201C";
+  line-height: 1em;
+  left: -0.60180em;
+  top: 0;
+  }
+.quotee {
+  font-size: .8em;
+  margin-top: .7em;
+  text-align: right;
+  font-style: normal;
+}
+
+ul, ol {
+  margin-left: 1.5em;
+  }
+
+ul {
+  list-style-type: circle;
+  }
+
+ol {
+  list-style-type: lower-roman;
+  }
+  
+h1, h2, h3, h4, h5, h6, ul.lang {
+  font-family: "brandon-grotesque", sans-serif;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+h1 {
+  margin: .5em 0 0 0;
+  text-transform: uppercase;
+  line-height: 1em;
+  font-size: 2em;
+  text-align: center;
+  }
+  
+h1.singleheader {
+	margin-bottom: .8125em;
+}
+
+h2 {
+font-family:"adobe-caslon-pro", georgia, serif;
+  line-height: 1.77777em;
+  font-size: 1.2em;
+  text-align: center;
+  margin: .5em 0 2em 0;
+/*   letter-spacing: .1em; */
+  color: #F67280;
+  font-style: italic;
+}
+  
+p.dropcap, p.ingress {
+  font-family:"adobe-caslon-pro", georgia, serif;
+  text-transform: none;
+  font-size: 1.2em;
+  line-height: 1.5em;
+}
+
+h3 {
+	color: #888;
+  margin: 1.7em 0 .85em;
+  line-height: 1.5em;
+  font-size: 1.3em;
+  text-transform: uppercase;
+  }
+
+h4 {
+  line-height: 1.12382em;
+  margin: .1em 0;
+  font-size: 1.2em;
+  color: #999;
+  text-transform: uppercase;
+  text-align: center;
+  }
+
+h5 {
+  text-transform: uppercase;
+  text-align: center;
+  color: @logogrey;
+  letter-spacing: 2px;
+  line-height: 1.5em;
+  margin: 0 0 1.5em;
+  font-size: 1em;
+  }
+
+h6 {
+  font-weight: bold;
+  margin: 0 0 1.5em;
+  }
+
+pre,code {
+  font: .9375em/1.26562em monospace, monospace;
+  -webkit-font-smoothing: subpixel-antialiased;
+  }
+
+pre {
+  color: rgb(90,90,90);
+  padding: 1.5em 1em;
+  margin-bottom: 3em;
+  line-height: 1em;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  }
+
+img {
+	margin: .5em auto 1.5em auto;
+	display: block;
+}
+
+.highlight {
+	border-color: rgb(0,0,0);
+	background: #fffccf;
+	color: rgb(0,0,0);
+	margin-top: 3em;
+	padding: 0 .2em;
+}
+
+.amp {
+	font: normal 1em Baskerville, Palatino, Constantia, "Book Antiqua", "URW Palladio L", serif;
+	font-style: italic;
+}
+
+.hr {
+	font-size: 1.125em; // 18
+	margin: 1.5em 0 2em 0;
+	border: 0;
+	width: 100%;
+	height: 1em;
+	color: #F67280;
+	text-align: center;
+	text-shadow: 1px 1px 1px #fff;
+}
+
+hr {
+	margin: 2em 0 0 0;
+	border: 0;
+	width: 100%;
+	height: 1px;
+	background: #ccc;
+}
+
+.square {color:black;margin-bottom: 4em;margin-top: 3em;}
+.softly {color: #888;}
+
+
+
+/*
+  IMAGES
+-------------------------------------------- */
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px; height: 0; overflow: hidden;
+}
+ 
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.leftimg {
+	display: block;
+	float:left;
+	width: 40%;
+}
+.rightimg {
+	display: block;
+	float:right;
+	width: 40%;
+}
+
+
+/*
+  LINKS
+--------------------------------------------- */
+
+a {
+  text-decoration: none;
+  color: lighten(#355C7D, 10%);
+  font-weight: bold;
+  }
+
+a:hover {
+  text-decoration: underline;
+  }
+
+a:active {
+  outline: none;
+  color: #355C7D;
+  text-decoration: underline;
+  }
+a:visited {
+	color: lighten(#355C7D, 13%);
+  outline: none;
+  }
+sup a {
+  text-decoration: none;
+  }
+
+/*
+  PRINT STYLES
+--------------------------------------------- */
+
+@media print {
+
+  html {
+    border: 0;
+    }
+ }
+
+/*
+  MIN-WIDTH: 15.652em
+--------------------------------------------- */
+
+@media screen and (min-width: 15.652em) {
+
+  body {
+    font-size: 87.5%;
+    }
+
+  h2 {
+    font-size: 1.26562em;
+    }
+
+  h3 {
+    font-size: 1.5em;
+    }
+
+  h4 {
+    font-size: 1.26562em;
+    }
+
+  }
+
+
+
+
+/*
+  MIN-WIDTH: 19.9375em
+--------------------------------------------- */
+
+@media screen and (min-width: 19.9375em) {
+
+  body {
+    font-size: 100%;
+    padding: 1em 1.5em 1em 1.5em;
+    }
+
+  h1 {
+    font-size: 3em;
+    }
+
+  .dropcap:first-letter {
+    font: 3.32956em/0.7em Georgia, serif;
+    -webkit-font-smoothing: antialiased;
+    margin: .1em .1em 0 0;
+    float: left;
+    }
+
+  }
+
+/*
+  MIN-WIDTH: 29.9375em
+--------------------------------------------- */
+
+@media screen and (min-width: 29.9375em) {
+  body {
+    padding: 1em 3em 1em 3em;
+    max-width: 34.3em
+    }
+
+  ul, ol {
+    margin-left: 0;
+    }
+
+  sup.indent {
+    margin-left: -1.5em;
+    }
+
+  }
+
+/*
+  MIN-WIDTH: 38em
+--------------------------------------------- */
+
+@media screen and (min-width: 38em) {
+
+  html {
+    }
+
+  body {
+	   font-size: 120%;
+    padding: 1em 3em 1em 3em;
+    max-width: 35em;
+    line-height: 1.75em;
+    
+    }
+
+  h1 {
+    /* margin: .97em 0 .8em; */
+    font-size: 4em;
+    }
+
+  }
+  
+/*
+  MIN-WIDTH: 60em
+--------------------------------------------- */
+
+@media screen and (min-width: 60em) {
+  
+  body {
+    padding: 1em 7.59372em 1em 7.59372em;
+    max-width: 35em;
+    line-height: 1.75em;
+    font-size: 130%;
+    }
+
+  .wide {
+    margin-left: -11em;
+    max-width: none;
+    width: 56em;
+    }
+
+  }
+
+/*
+  MIN-WIDTH: 99.9375em
+--------------------------------------------- */
+
+@media screen and (min-width: 99.9375em) {
+
+  body {
+    max-width: 34.43736em;
+    line-height: 1.75em;
+    font-size: 150%;
+    }
+
+  }
+
+/*
+  MMMO======================================
+--------------------------------------------- */
+nav {
+  text-transform: uppercase;
+  font-variant: small-caps;
+  font-weight: bold;
+  text-align: center;
+  margin: .5em 0 2em 0;
+  font-size: .75em;
+  letter-spacing: .15em;
+  color: #aaa;
+}
+
+nav:before{
+  content: "☛";
+  margin-right: .6em;
+  font-size: .8em;
+  color: #ccc;
+  text-shadow: 1px 1px 1px #fff;
+}
+nav:after{
+  content: "☚";
+  margin-left: .6em;
+  font-size: .8em;
+  color: #ccc;
+  text-shadow: 1px 1px 1px #fff;
+}
+
+
+nav a, nav a:visited {
+	 color: #bbb;
+	 text-shadow: 1px 1px 1px #fff;
+}
+nav a:hover {
+	 color: @pink;
+	 text-decoration: none;
+}
+
+p.entry-meta {
+	background:url(i/hr.gif) top left repeat-x;
+	border-top:1px dotted @pink;
+	padding: .8125em 0;
+	text-align: center;
+	color: @logogrey;
+	font-size: .8125em;
+	text-shadow: 1px 1px 1px #fff;
+}
+p.entry-meta .antalf, p.entry-meta .datum {color: #666;} 
+
+/* footer widget */
+ul.wrapper {
+	background:url(i/hr.gif) top left repeat-x;
+	border-top:1px dotted lighten(@green, 5%);
+	margin: 5em 0 0 0;
+	padding: .875em 0;
+}
+ul.wrapper li, figcaption {
+	list-style: none;
+	font-size: .8125em;
+	line-height: 1.5em;
+	color: @darkgrey;
+}
+
+figcaption span, .brandon {
+	font-family: "brandon-grotesque", sans-serif;
+	text-transform: uppercase;
+	color: @grey;
+}
+
+figcaption {
+	margin: 0 5px;
+}
+
+ul.wrapper li a, figcaption a, figcaption a:visited {
+	color: @green;
+}
+
+
+figure a img {
+	.transition(0.2s,ease-out);
+	display: block;
+// 	background: red;
+	border: 3px solid #fff;
+	margin-bottom: .7em;
+}
+figure a:hover img {
+	display: block;
+// 	background: red;
+	border: 3px solid #ddd;
+}
+
+ul.wrapper li a.brandon {
+	font-weight: normal;
+	font-family: "brandon-grotesque", sans-serif;
+	text-transform: uppercase;
+}
+
+
+/* Intros */
+
+#IntroduktionEtt {
+	margin: 4em 0 3em 0;
+	padding: 1.5em 0 0 0;
+	border-top:1px dotted @logogrey;
+	border-bottom:1px dotted lighten(@pink,10%);
+	background: url(i/hr.gif) top left repeat-x, url(i/hr.gif) bottom left repeat-x;
+}
+
+/* Fotnoter */
+
+dl#Footnotes {
+	font-size: .9375em;
+	color: #333;
+	line-height: 1.75em;
+}
+
+dt {
+	float: left;
+	clear: left;
+	width: 1em;
+	text-align: left;
+	margin: 0;
+}
+dd {
+	margin: 0 0 0 1.5em;
+	padding: 0 0 1em 0;
+}
+
+.footnote a {
+	margin: 0 1px 0 0;
+	color: #999;
+}
+
+.footnotedivider {padding:1em 0 0 0; border-top:1px dotted #ccc;}
+
+
+dl#Footnotes p {margin-bottom: 0;}
+dl#Footnotes p.gap {margin-bottom: 1.5em;}
+dl#Footnotes p.tal {/* margin-left: .5em; */}
+// dl#Footnotes p.tal:before {content:"\2013";padding-right: .5em;}
+dl#Footnotes p.fi {color: lighten(purple, 20%);}
+dl#Footnotes p.nasse {color: darken(brown, 5%);}
+
