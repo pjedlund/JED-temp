@@ -7,14 +7,17 @@ eleventyNavigation:
   key: Home
   order: 0
 ---
-# Welcome
+# Hej
 
-This is a template for building a simple blog website with the [Eleventy static site generator](https://www.11ty.io), with deployment to [Netlify](https://www.netlify.com).
+<div class="container" class="h-card" rel="author">
+<p>I'm <span class="p-name"><span class="p-given-name">Johan</span> <span class="p-family-name">Edlund</span></span> and I live in the town of
+<span class="p-locality" lang="sv">Malmö</span> in the southernnmost region of <span class="p-country-name">Sweden</span>, <span class="p-region">Scania</span>.</p>
 
-Includes [Netlify CMS](https://www.netlifycms.org) for WYSIWYG content editing, and [Netlify Forms](https://www.netlify.com/docs/form-handling) for processing your site's form data.
+<ul>
+  <li>Twitter: <a href="https://twitter.com/pjedlund" rel="me">@pjedlund</a></li>
+  <li>Github: <a href="https://github.com/pjedlund" rel="me">pjedlund</a></li>
+  <li><a class="u-email" rel="me" href="mailto:me@johanedlund.se">E-mail</a></li>
+  <li><a class="u-uid u-url" href="https://johanedlund.se">Website</a></li>
+</ul>
 
-For more info on installation and usage, view the [project repo]({{ pkg.repository.url }}) on GitHub.
-
-Or click the button below to deploy your own copy of this project to Netlify.
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/danurbanowicz/eleventy-netlify-boilerplate&stack=cms)
+</div>
