@@ -17,9 +17,9 @@ eleventyNavigation:
 <ul>
   <li>Twitter: <a href="https://twitter.com/pjedlund" rel="me">@pjedlund</a></li>
   <li>Github: <a href="https://github.com/pjedlund" rel="me">pjedlund</a></li>
-  <li><a class="u-email" rel="me" href="mailto:me@johanedlund.se">E-mail</a></li>
-  <li><a class="u-uid u-url" href="https://johanedlund.se">Website</a></li>
-  <li><a href="./cv">Online CV</a></li>
+  <li>My <a class="u-email" rel="me" href="mailto:hello@johanedlund.se">e-mail</a></li>
+  <li>My (this)<a class="u-uid u-url" href="https://johanedlund.se">website</a></li>
+  <li>My <a href="./cv">online CV</a></li>
 </ul>
 
 </div>
