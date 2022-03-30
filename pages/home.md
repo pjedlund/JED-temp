@@ -1,6 +1,6 @@
 ---
 layout: layouts/home.njk
-title: Johan Edlund | UX/UI-designer and front end developer
+title: Johan Edlund | UX/UI-designer and front-end developer
 date: 2022-03-16T00:00:00.000Z
 permalink: /
 eleventyNavigation:
